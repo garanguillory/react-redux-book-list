@@ -4,8 +4,17 @@ import {selectBook} from '../actions/index';
 import {bindActionCreators} from 'redux';
 
 class BookList extends Component {
+
   renderList() {
-    return this.props.books.map((book) => {
+    // this.props.books.map
+    var books = [];
+    if(!this.props.newBook){
+      books = this.props.books;
+    } else {
+      books = [...this.props.books, this.props.newBook];
+    }
+
+    return books.map((book) => {
       return (
         <li
           key={book.id}
@@ -29,7 +38,8 @@ class BookList extends Component {
 
 function mapStateToProps(state){
   return {
-    books: state.books
+    books: state.books,
+    newBook: state.newBook
   }
 }
 

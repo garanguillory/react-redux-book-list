@@ -11,10 +11,11 @@ export function selectBook(book){
 // payload (book) should be an object:
 // {title: 'Hello World', author: 'Louie', pages: 199}
 // where do I add the unique book id ???
-
+let nextBookId = 100;
 export function addBook(book){
 	return {
 		type: ADD_BOOK,
-		payload: book
+		payload: book,
+		id: nextBookId++
 	}
 }

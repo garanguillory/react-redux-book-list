@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-// import {addBook} from '../actions/index';
-// import {bindActionCreators} from 'redux';
+import {addBook} from '../actions/index';
+import {bindActionCreators} from 'redux';
 
-export default class BookList extends Component {
+export default class AddBook extends Component {
 	constructor(props) {
 		super(props);
 
@@ -56,8 +56,8 @@ export default class BookList extends Component {
 	onFormSubmit(event){
 		event.preventDefault();
 		// add task to List
-		// this.props.addBook(this.state.book);
-		// this.setState({book: {title: '', author: '', pages: ''}});
+		this.props.addBook(this.state.book);
+		this.setState({book: {title: '', author: '', pages: ''}});
 	}
 
   render() {
@@ -96,9 +96,9 @@ export default class BookList extends Component {
 }
 
 
-// function mapDispatchToProps(dispatch){
-  // return bindActionCreators({addBook: addBook}, dispatch)
-// }
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({addBook: addBook}, dispatch)
+}
 
-// export default connect(null, mapDispatchToProps)(BookList);
+export default connect(null, mapDispatchToProps)(AddBook);
 
