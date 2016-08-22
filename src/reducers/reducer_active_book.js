@@ -1,5 +1,4 @@
-export const SELECTED_BOOK = 'SELECTED_BOOK';
-// export const ADD_BOOK = 'ADD_BOOK';
+import {SELECTED_BOOK} from '../actions/index'
 
 // id, title, action, payload
 

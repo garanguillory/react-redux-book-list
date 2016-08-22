@@ -1,5 +1,4 @@
-export const ADD_BOOK = 'ADD_BOOK';
-
+import {ADD_BOOK} from '../actions/index'
 // id, title, action, payload
 
 export default function(state = null, action){
